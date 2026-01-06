@@ -1,9 +1,13 @@
 import requests
 import json # ต้องใช้เพราะ Discord คุยด้วยภาษา JSON
 import time
+import os # เรียกใช้โมดูลระบบ
+from dotenv import load_dotenv # เรียกตัวช่วยอ่าน .env
+
+load_dotenv()
 
 # เอา URL ยาวๆ ที่ Copy มาวางตรงนี้
-DISCORD_WEBHOOK_URL = "your_discord_url"
+DISCORD_WEBHOOK_URL = os.getenv("DISCORD_URL")
 
 def send_discord_notify(message):
     """ส่งข้อความเข้า Discord"""
